@@ -1,0 +1,18 @@
+//
+//  FtheLineStar-PrefixHeader.pch
+//  F The Line Star
+//
+//  Created by Phil Huffman on 2016-11-15.
+//  Copyright © 2016 F TheL ine, Inc. All rights reserved.
+//
+
+#ifndef FtheLineStar_PrefixHeader_pch
+#define FtheLineStar_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <UIKit/UIKit.h>
+
+#import "CommonViewController.h"
+
+#endif /* FtheLineStar_PrefixHeader_pch */
