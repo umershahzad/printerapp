@@ -54,7 +54,7 @@
 /* Begin PBXFileReference section */
 		62583BEE1D338C8D005EFC6C /* GermanReceiptsImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GermanReceiptsImpl.h; sourceTree = "<group>"; };
 		62583BEF1D338C8D005EFC6C /* GermanReceiptsImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GermanReceiptsImpl.m; sourceTree = "<group>"; };
-		6267F78E1BDF552000D02B89 /* ObjectiveC SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ObjectiveC SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6267F78E1BDF552000D02B89 /* FTL Printer App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FTL Printer App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6267F7921BDF552000D02B89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6267F7941BDF552000D02B89 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6267F7951BDF552000D02B89 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 				6267F7C61BDF55EF00D02B89 /* StarIO_Extension.framework */,
 				6267F7C71BDF55EF00D02B89 /* StarIO.framework */,
 				6267F7C41BDF55DF00D02B89 /* CoreBluetooth.framework */,
-				6267F7901BDF552000D02B89 /* ObjectiveC SDK */,
+				6267F7901BDF552000D02B89 /* Source */,
 				6267F78F1BDF552000D02B89 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -164,12 +164,12 @@
 		6267F78F1BDF552000D02B89 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6267F78E1BDF552000D02B89 /* ObjectiveC SDK.app */,
+				6267F78E1BDF552000D02B89 /* FTL Printer App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6267F7901BDF552000D02B89 /* ObjectiveC SDK */ = {
+		6267F7901BDF552000D02B89 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				62938F451C782E34001C50C9 /* AllReceiptsExtViewController.h */,
@@ -216,6 +216,7 @@
 				629916991C9CFFE3000A8CF0 /* SwitchTableViewCell.h */,
 				6299169A1C9CFFE3000A8CF0 /* SwitchTableViewCell.m */,
 			);
+			name = Source;
 			path = "ObjectiveC SDK";
 			sourceTree = "<group>";
 		};
@@ -274,9 +275,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6267F78D1BDF552000D02B89 /* ObjectiveC SDK */ = {
+		6267F78D1BDF552000D02B89 /* FTL Printer App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6267F7BB1BDF552100D02B89 /* Build configuration list for PBXNativeTarget "ObjectiveC SDK" */;
+			buildConfigurationList = 6267F7BB1BDF552100D02B89 /* Build configuration list for PBXNativeTarget "FTL Printer App" */;
 			buildPhases = (
 				6267F78A1BDF552000D02B89 /* Sources */,
 				6267F78B1BDF552000D02B89 /* Frameworks */,
@@ -286,9 +287,9 @@
 			);
 			dependencies = (
 			);
-			name = "ObjectiveC SDK";
+			name = "FTL Printer App";
 			productName = "ObjectiveC SDK";
-			productReference = 6267F78E1BDF552000D02B89 /* ObjectiveC SDK.app */;
+			productReference = 6267F78E1BDF552000D02B89 /* FTL Printer App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -306,7 +307,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6267F7891BDF552000D02B89 /* Build configuration list for PBXProject "ObjectiveC SDK" */;
+			buildConfigurationList = 6267F7891BDF552000D02B89 /* Build configuration list for PBXProject "FTL Printer App" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -319,7 +320,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6267F78D1BDF552000D02B89 /* ObjectiveC SDK */,
+				6267F78D1BDF552000D02B89 /* FTL Printer App */,
 			);
 		};
 /* End PBXProject section */
@@ -535,7 +536,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6267F7891BDF552000D02B89 /* Build configuration list for PBXProject "ObjectiveC SDK" */ = {
+		6267F7891BDF552000D02B89 /* Build configuration list for PBXProject "FTL Printer App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6267F7B91BDF552100D02B89 /* Debug */,
@@ -544,7 +545,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6267F7BB1BDF552100D02B89 /* Build configuration list for PBXNativeTarget "ObjectiveC SDK" */ = {
+		6267F7BB1BDF552100D02B89 /* Build configuration list for PBXNativeTarget "FTL Printer App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6267F7BC1BDF552100D02B89 /* Debug */,

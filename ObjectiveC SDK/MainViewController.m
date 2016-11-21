@@ -7,11 +7,8 @@
 //
 
 #import "MainViewController.h"
-
 #import "AppDelegate.h"
-
 #import "ModelCapability.h"
-
 #import "Communication.h"
 
 typedef NS_ENUM(NSInteger, SectionIndex) {
@@ -43,25 +40,18 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-
     NSString *title = @"F The Line Control Panel";
-
     NSString *version = [NSString stringWithFormat:@"Ver.%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
-
     self.navigationItem.title = [NSString stringWithFormat:@"%@ %@", title, version];
-
     _selectedIndexPath = nil;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
     [_tableView reloadData];
 }
 
@@ -70,12 +60,9 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-
     if (section == 8) {
         return 2;
     }
-
     return 1;
 }
 
@@ -95,30 +82,29 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
             if (cell != nil) {
                 cell.backgroundColor = [UIColor colorWithRed:0.8 green:0.9 blue:1.0 alpha:1.0];
 
-                cell.      textLabel.text = @"Unselected State";
+                cell.textLabel.text = @"Unselected State";
                 cell.detailTextLabel.text = @"";
 
-                cell.      textLabel.textColor = [UIColor redColor];
+                cell.textLabel.textColor = [UIColor redColor];
                 cell.detailTextLabel.textColor = [UIColor redColor];
 
                 [UIView beginAnimations:nil context:nil];
 
-                cell.      textLabel.alpha = 0.0;
+                cell.textLabel.alpha = 0.0;
                 cell.detailTextLabel.alpha = 0.0;
 
-                [UIView setAnimationDelay             :0.0];                            // 0mS!!!
-                [UIView setAnimationDuration          :0.6];                            // 600mS!!!
-                [UIView setAnimationRepeatCount       :UINT32_MAX];
+                [UIView setAnimationDelay:0.0];                            // 0mS!!!
+                [UIView setAnimationDuration:0.6];                            // 600mS!!!
+                [UIView setAnimationRepeatCount:UINT32_MAX];
                 [UIView setAnimationRepeatAutoreverses:YES];
-                [UIView setAnimationCurve             :UIViewAnimationCurveEaseIn];
+                [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
 
-                cell.      textLabel.alpha = 1.0;
+                cell.textLabel.alpha = 1.0;
                 cell.detailTextLabel.alpha = 1.0;
 
                 [UIView commitAnimations];
 
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
                 cell.userInteractionEnabled = YES;
             }
         } else {
@@ -132,16 +118,15 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
 
             if (cell != nil) {
                 cell.backgroundColor = [UIColor colorWithRed:0.8 green:0.9 blue:1.0 alpha:1.0];
-                cell.      textLabel.text = [AppDelegate getModelName];
+                cell.textLabel.text = [AppDelegate getModelName];
 
                 if ([[AppDelegate getMacAddress] isEqualToString:@""]) {
                     cell.detailTextLabel.text = [AppDelegate getPortName];
-                }
-                else {
+                } else {
                     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ (%@)", [AppDelegate getPortName], [AppDelegate getMacAddress]];
                 }
 
-                cell.      textLabel.textColor = [UIColor blueColor];
+                cell.textLabel.textColor = [UIColor blueColor];
                 cell.detailTextLabel.textColor = [UIColor blueColor];
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }
@@ -157,60 +142,54 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
 
         if (cell != nil) {
             switch (indexPath.section) {
-                default                       :
-                    //              case SectionIndexPrinter      :
-                    //              case SectionIndexCashDrawer   :
-                    //              case SectionIndexDeviceStatus :
+                default:
+                    //              case SectionIndexPrinter:
+                    //              case SectionIndexCashDrawer:
+                    //              case SectionIndexDeviceStatus:
                     cell.backgroundColor = [UIColor whiteColor];
-
-                    cell.      textLabel.text = @"Sample";
+                    cell.textLabel.text = @"Sample";
                     cell.detailTextLabel.text = @"";
-
-                    cell.      textLabel.textColor = [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0];
+                    cell.textLabel.textColor = [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0];
                     cell.detailTextLabel.textColor = [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0];
                     break;
 
-                case SectionIndexBarcodeReader :
-                case SectionIndexCombination   :
+                case SectionIndexBarcodeReader:
+                case SectionIndexCombination:
                     cell.backgroundColor = [UIColor whiteColor];
-                    cell.      textLabel.text = @"StarIoExtManager Sample";
+                    cell.textLabel.text = @"StarIoExtManager Sample";
                     cell.detailTextLabel.text = @"";
-                    cell.      textLabel.textColor = [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0];
+                    cell.textLabel.textColor = [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0];
                     cell.detailTextLabel.textColor = [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0];
                     break;
 
-                case SectionIndexApi :
+                case SectionIndexApi:
                     cell.backgroundColor = [UIColor colorWithRed:1.0 green:0.9 blue:1.0 alpha:1.0];
-
-                    cell.      textLabel.text = @"Sample";
+                    cell.textLabel.text = @"Sample";
                     cell.detailTextLabel.text = @"";
-
-                    cell.      textLabel.textColor = [UIColor blueColor];
+                    cell.textLabel.textColor = [UIColor blueColor];
                     cell.detailTextLabel.textColor = [UIColor blueColor];
                     break;
 
-                case SectionIndexAllReceipts :
+                case SectionIndexAllReceipts:
                     cell.backgroundColor = [UIColor colorWithRed:0.8 green:1.0 blue:0.9 alpha:1.0];
-
-                    cell.      textLabel.text = @"Sample";
+                    cell.textLabel.text = @"Sample";
                     cell.detailTextLabel.text = @"";
-
-                    cell.      textLabel.textColor = [UIColor blueColor];
+                    cell.textLabel.textColor = [UIColor blueColor];
                     cell.detailTextLabel.textColor = [UIColor blueColor];
                     break;
 
-                case SectionIndexAppendixBluetooth :
+                case SectionIndexAppendixBluetooth:
                     cell.backgroundColor = [UIColor whiteColor];
 
                     if (indexPath.row == 0) {
-                        cell.      textLabel.text = @"Pairing and Connect Bluetooth";
+                        cell.textLabel.text = @"Pairing and Connect Bluetooth";
                         cell.detailTextLabel.text = @"";
                     } else {
-                        cell.      textLabel.text = @"Disconnect Bluetooth";
+                        cell.textLabel.text = @"Disconnect Bluetooth";
                         cell.detailTextLabel.text = @"";
                     }
 
-                    cell.      textLabel.textColor = [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0];
+                    cell.textLabel.textColor = [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0];
                     cell.detailTextLabel.textColor = [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0];
                     break;
             }
@@ -257,24 +236,18 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
             }
 
             if (userInteractionEnabled == YES) {
-                cell.      textLabel.alpha = 1.0;
+                cell.textLabel.alpha = 1.0;
                 cell.detailTextLabel.alpha = 1.0;
-
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
                 cell.userInteractionEnabled = YES;
-            }
-            else {
-                cell.      textLabel.alpha = 0.3;
+            } else {
+                cell.textLabel.alpha = 0.3;
                 cell.detailTextLabel.alpha = 0.3;
-
                 cell.accessoryType = UITableViewCellAccessoryNone;
-
                 cell.userInteractionEnabled = NO;
             }
         }
     }
-
     return cell;
 }
 
@@ -282,40 +255,40 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
     NSString *title = @"";
 
     switch (section) {
-        default                 :
-            //      case SectionIndexDevice :
+        default:
+            //      case SectionIndexDevice:
             title = @"Destination Device";
             break;
 
-        case SectionIndexPrinter :
+        case SectionIndexPrinter:
             title = @"Printer";
             break;
 
-        case SectionIndexCashDrawer :
+        case SectionIndexCashDrawer:
             title = @"Cash Drawer";
             break;
 
-        case SectionIndexBarcodeReader :
+        case SectionIndexBarcodeReader:
             title = @"Barcode Reader (for mPOP)";
             break;
 
-        case SectionIndexCombination :
+        case SectionIndexCombination:
             title = @"Combination (for mPOP)";
             break;
 
-        case SectionIndexApi :
+        case SectionIndexApi:
             title = @"API";
             break;
 
-        case SectionIndexAllReceipts :
+        case SectionIndexAllReceipts:
             title = @"AllReceipts";
             break;
 
-        case SectionIndexDeviceStatus :
+        case SectionIndexDeviceStatus:
             title = @"Device Status";
             break;
 
-        case SectionIndexAppendixBluetooth :
+        case SectionIndexAppendixBluetooth:
             title = @"Appendix (Bluetooth)";
             break;
     }
@@ -331,11 +304,11 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
     UIAlertView *alertView = nil;
 
     switch (_selectedIndexPath.section) {
-        default                 :
-            //      case SectionIndexDevice :
+        default:
+            //      case SectionIndexDevice:
             [self performSegueWithIdentifier:@"PushSearchPortViewController" sender:nil];
             break;
-        case SectionIndexPrinter :
+        case SectionIndexPrinter:
             alertView = [[UIAlertView alloc] initWithTitle:@"Select language."
                                                    message:@""
                                                   delegate:self
@@ -345,18 +318,19 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
             if ([AppDelegate getEmulation] == StarIoExtEmulationEscPos ||
                 [AppDelegate getEmulation] == StarIoExtEmulationStarDotImpact) {
                 alertView.tag = AlertViewIndexLanguageFixedPaperSize;
-            }
-            else {
+            } else {
                 alertView.tag = AlertViewIndexLanguage;
             }
 
             [alertView show];
             break;
-        case SectionIndexCashDrawer :
+
+        case SectionIndexCashDrawer:
             [self performSegueWithIdentifier:@"PushCashDrawerViewController" sender:nil];
             break;
-        case SectionIndexBarcodeReader :
-        case SectionIndexCombination   :
+
+        case SectionIndexBarcodeReader:
+        case SectionIndexCombination:
             alertView = [[UIAlertView alloc] initWithTitle:@"This menu is for mPOP."
                                                    message:@""
                                                   delegate:self
@@ -367,15 +341,14 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
 
             [alertView show];
             break;
-        case SectionIndexApi :
+
+        case SectionIndexApi:
             if ([AppDelegate getEmulation] == StarIoExtEmulationEscPos) {
                 [AppDelegate setSelectedPaperSize:PaperSizeIndexEscPosThreeInch];
 
                 [self performSegueWithIdentifier:@"PushApiViewController" sender:nil];
-            }
-            else if ([AppDelegate getEmulation] == StarIoExtEmulationStarDotImpact) {
+            } else if ([AppDelegate getEmulation] == StarIoExtEmulationStarDotImpact) {
                 [AppDelegate setSelectedPaperSize:PaperSizeIndexDotImpactThreeInch];
-
                 [self performSegueWithIdentifier:@"PushApiViewController" sender:nil];
             } else {
                 alertView = [[UIAlertView alloc] initWithTitle:@"Select paper size."
@@ -388,10 +361,9 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
 
                 [alertView show];
             }
-
             break;
 
-        case SectionIndexAllReceipts :
+        case SectionIndexAllReceipts:
             alertView = [[UIAlertView alloc] initWithTitle:@"Select language."
                                                    message:@""
                                                   delegate:self
@@ -407,11 +379,11 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
             [alertView show];
             break;
 
-        case SectionIndexDeviceStatus :
+        case SectionIndexDeviceStatus:
             [self performSegueWithIdentifier:@"PushDeviceStatusViewController" sender:nil];
             break;
 
-        case SectionIndexAppendixBluetooth :
+        case SectionIndexAppendixBluetooth:
             if (_selectedIndexPath.row == 0) {
                 [Communication connectBluetooth];
             } else {
@@ -434,8 +406,8 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
         UIAlertView *nestAlertView = nil;
 
         switch (alertView.tag) {
-            default                     :
-                //          case AlertViewIndexLanguage :
+            default:
+                //          case AlertViewIndexLanguage:
                 [AppDelegate setSelectedLanguage:buttonIndex - 1];     // Same!!!
 
                 nestAlertView = [[UIAlertView alloc] initWithTitle:@"Select paper size."
@@ -449,12 +421,12 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
                 [nestAlertView show];
                 break;
 
-            case AlertViewIndexLanguageFixedPaperSize :
+            case AlertViewIndexLanguageFixedPaperSize:
                 [AppDelegate setSelectedLanguage:buttonIndex - 1];     // Same!!!
 
                 switch (_selectedIndexPath.section) {
-                    default                  :
-                        //                  case SectionIndexPrinter :
+                    default:
+                        //                  case SectionIndexPrinter:
                         if ([AppDelegate getEmulation] == StarIoExtEmulationEscPos) {
                             [AppDelegate setSelectedPaperSize:PaperSizeIndexEscPosThreeInch];
                         } else {
@@ -464,13 +436,13 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
                         [self performSegueWithIdentifier:@"PushPrinterViewController"     sender:nil];
                         break;
 
-                    case SectionIndexCombination :
+                    case SectionIndexCombination:
                         [AppDelegate setSelectedPaperSize:PaperSizeIndexTwoInch];
 
                         [self performSegueWithIdentifier:@"PushCombinationViewController" sender:nil];
                         break;
 
-                    case SectionIndexAllReceipts :
+                    case SectionIndexAllReceipts:
                         [AppDelegate setSelectedPaperSize:PaperSizeIndexEscPosThreeInch];
 
                         [self performSegueWithIdentifier:@"PushAllReceiptsViewController" sender:nil];
@@ -478,47 +450,47 @@ typedef NS_ENUM(NSInteger, AlertViewIndex) {
                 }
                 break;
 
-            case AlertViewIndexPaperSize :
+            case AlertViewIndexPaperSize:
                 switch (buttonIndex - 1) {
-                    default :
-                        //                  case 0 :
+                    default:
+                        //                  case 0:
                         [AppDelegate setSelectedPaperSize:PaperSizeIndexTwoInch];
                         break;
 
-                    case 1 :
+                    case 1:
                         [AppDelegate setSelectedPaperSize:PaperSizeIndexThreeInch];
                         break;
 
-                    case 2 :
+                    case 2:
                         [AppDelegate setSelectedPaperSize:PaperSizeIndexFourInch];
                         break;
                 }
 
                 switch (_selectedIndexPath.section) {
-                    default                  :
-                        //                  case SectionIndexPrinter :
+                    default:
+                        //                  case SectionIndexPrinter:
                         [self performSegueWithIdentifier:@"PushPrinterViewController"     sender:nil];
                         break;
 
-                    case SectionIndexApi :
+                    case SectionIndexApi:
                         [self performSegueWithIdentifier:@"PushApiViewController"         sender:nil];
                         break;
 
-                    case SectionIndexAllReceipts :
+                    case SectionIndexAllReceipts:
                         [self performSegueWithIdentifier:@"PushAllReceiptsViewController" sender:nil];
                         break;
-                        
+
                 }
                 break;
 
-            case AlertViewIndexConfirm :
+            case AlertViewIndexConfirm:
                 switch (_selectedIndexPath.section) {
-                    default                        :
-                        //                  case SectionIndexBarcodeReader :
+                    default:
+                        //                  case SectionIndexBarcodeReader:
                         [self performSegueWithIdentifier:@"PushBarcodeReaderExtViewController" sender:nil];
                         break;
 
-                    case SectionIndexCombination :
+                    case SectionIndexCombination:
                         nestAlertView = [[UIAlertView alloc] initWithTitle:@"Select language."
                                                                    message:@""
                                                                   delegate:self

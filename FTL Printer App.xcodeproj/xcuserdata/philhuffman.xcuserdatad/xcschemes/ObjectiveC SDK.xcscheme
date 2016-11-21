@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6267F78D1BDF552000D02B89"
-               BuildableName = "ObjectiveC SDK.app"
-               BlueprintName = "ObjectiveC SDK"
-               ReferencedContainer = "container:ObjectiveC SDK.xcodeproj">
+               BuildableName = "FTL Printer App.app"
+               BlueprintName = "FTL Printer App"
+               ReferencedContainer = "container:FTL Printer App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6267F78D1BDF552000D02B89"
-            BuildableName = "ObjectiveC SDK.app"
-            BlueprintName = "ObjectiveC SDK"
-            ReferencedContainer = "container:ObjectiveC SDK.xcodeproj">
+            BuildableName = "FTL Printer App.app"
+            BlueprintName = "FTL Printer App"
+            ReferencedContainer = "container:FTL Printer App.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6267F78D1BDF552000D02B89"
-            BuildableName = "ObjectiveC SDK.app"
-            BlueprintName = "ObjectiveC SDK"
-            ReferencedContainer = "container:ObjectiveC SDK.xcodeproj">
+            BuildableName = "FTL Printer App.app"
+            BlueprintName = "FTL Printer App"
+            ReferencedContainer = "container:FTL Printer App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6267F78D1BDF552000D02B89"
-            BuildableName = "ObjectiveC SDK.app"
-            BlueprintName = "ObjectiveC SDK"
-            ReferencedContainer = "container:ObjectiveC SDK.xcodeproj">
+            BuildableName = "FTL Printer App.app"
+            BlueprintName = "FTL Printer App"
+            ReferencedContainer = "container:FTL Printer App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
